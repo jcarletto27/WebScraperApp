@@ -1,4 +1,4 @@
-package Main;
+package com.carletto.scraper;
 
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -14,7 +14,7 @@ public class PullReport {
 
 
     public List<String[]> report(Document doc) {
-        List<String[]> outputLines = new ArrayList<String[]>();
+        List<String[]> outputLines = new ArrayList<>();
 
 
         //Optional Time Span

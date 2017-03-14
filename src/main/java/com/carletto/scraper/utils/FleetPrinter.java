@@ -1,4 +1,4 @@
-package Utils;
+package com.carletto.scraper.utils;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;

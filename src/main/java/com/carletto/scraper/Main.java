@@ -1,4 +1,4 @@
-package Main;
+package com.carletto.scraper;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -14,8 +14,6 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         launch(args);
-
-
     }
 
     @Override
@@ -26,7 +24,7 @@ public class Main extends Application {
         Scene scene = new Scene(loader.load(), 600, 400);
 
         //Set Icons, 16x16 for titlebar, 32x32 for taskbar.
-        List<Image> icons = new ArrayList<Image>();
+        List<Image> icons = new ArrayList<>();
         icons.add(new Image(Main.class.getResourceAsStream("/FleetScraper16x16.png")));
         icons.add(new Image(Main.class.getResourceAsStream("/FleetScraper32x32.png")));
         primaryStage.getIcons().setAll(icons);

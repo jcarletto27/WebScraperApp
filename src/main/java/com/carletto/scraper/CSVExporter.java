@@ -1,4 +1,4 @@
-package Main;
+package com.carletto.scraper;
 
 import com.opencsv.CSVWriter;
 
@@ -13,9 +13,7 @@ public class CSVExporter {
 
     public void write(List<String[]> entries, File fileLocation) {
 
-        CSVWriter writer = null;
-        try {
-            writer = new CSVWriter(new FileWriter(fileLocation));
+        try (CSVWriter writer = new CSVWriter(new FileWriter(fileLocation))) {
             for (String[] sa : entries) {
                 System.out.println(sa[0] + " " + sa[1]);
             }

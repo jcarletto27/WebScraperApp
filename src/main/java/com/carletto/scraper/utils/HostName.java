@@ -1,4 +1,4 @@
-package Utils;
+package com.carletto.scraper.utils;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;

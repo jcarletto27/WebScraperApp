@@ -1,7 +1,7 @@
-package Main;
+package com.carletto.scraper;
 
-import Utils.DateList;
-import Utils.HostName;
+import com.carletto.scraper.utils.DateList;
+import com.carletto.scraper.utils.HostName;
 import com.gargoylesoftware.htmlunit.*;
 import com.gargoylesoftware.htmlunit.html.*;
 
@@ -15,8 +15,8 @@ import java.util.List;
 public class EditReport {
 
     public HtmlPage page;
-    public List<HtmlSelect> selectList = new ArrayList<HtmlSelect>();
-    public List<String> elementList = new ArrayList<String>();
+    public List<HtmlSelect> selectList = new ArrayList<>();
+    public List<String> elementList = new ArrayList<>();
 
     //SubmitButton Javascript
     public String javascriptSubmit = "Clicking.Key(event,'MasterPageReports_m_mFr_btnSave',true)";
@@ -119,41 +119,13 @@ public class EditReport {
         return selectList;
     }
 
-    public void setSelectList(List<HtmlSelect> selectList) {
-        this.selectList = selectList;
-    }
-
-
     public void setField(HtmlSelect select, String value) {
         HtmlOption option = select.getOptionByValue(value);
         select.setSelectedAttribute(option, true);
     }
 
-    public HtmlPage getHtmlPage() {
-        return page;
-    }
-
-
-    public Page executeJavaScript(HtmlPage page, String js) {
-        Page result = page.executeJavaScript(js).getNewPage();
-
-        return result;
-    }
-
-    public void exeJS() {
-        page.executeJavaScript(javascriptSubmit).getNewPage();
-    }
-
     public List<String> getElementList() {
         return elementList;
-    }
-
-    public void setElementList(List<String> elementList) {
-        this.elementList = elementList;
-    }
-
-    public String getJavascriptSubmit() {
-        return javascriptSubmit;
     }
 
     public HtmlPage submit() {
@@ -167,11 +139,6 @@ public class EditReport {
             e.printStackTrace();
             return null;
         }
-
-    }
-
-    public void clearReport() {
-        DateList.getCurrentDates().clear();
 
     }
 }

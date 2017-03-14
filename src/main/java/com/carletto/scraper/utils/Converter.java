@@ -1,4 +1,4 @@
-package Utils;
+package com.carletto.scraper.utils;
 
 import javafx.util.StringConverter;
 
@@ -13,8 +13,6 @@ public class Converter extends StringConverter<LocalDate> {
 
     @Override
     public String toString(LocalDate object) {
-
-
         if (object != null) {
             return formatter.format(object);
 
