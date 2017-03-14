@@ -1,6 +1,6 @@
 package com.carletto.scraper;
 
-import com.carletto.scraper.utils.Converter;
+import com.carletto.scraper.utils.DateConverter;
 import com.carletto.scraper.utils.DateList;
 import com.carletto.scraper.utils.FleetPrinter;
 import com.gargoylesoftware.htmlunit.html.HtmlSelect;
@@ -51,7 +51,7 @@ public class Controller implements Initializable {
     private FleetPrinter fleetPrinter = new FleetPrinter();
     private File fileLocation;
     private EditReport editReport = new EditReport();
-    private Converter converter = new Converter();
+    private DateConverter dateConverter = new DateConverter();
     private ObservableList<FleetPrinter> data = FXCollections.observableArrayList();
     private String editReportUrl = "http://10.32.137.215/XeroxCentreWareWeb/AccessControl/Reports/reportsSettings.aspx?reportID=100";
     private CSVExporter csvExporter = new CSVExporter();
@@ -155,8 +155,8 @@ public class Controller implements Initializable {
             editReport.editSettings(editReportUrl);
 
 
-            datepicker_Start.setConverter(converter);
-            datepicker_End.setConverter(converter);
+            datepicker_Start.setConverter(dateConverter);
+            datepicker_End.setConverter(dateConverter);
 
             datepicker_Start.setValue(DateList.localDateParser(DateList.startDate()));
             datepicker_End.setValue(DateList.localDateParser(DateList.endDate()));

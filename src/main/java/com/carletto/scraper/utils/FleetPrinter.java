@@ -25,32 +25,8 @@ public class FleetPrinter {
         this.DIFFERENCE = new SimpleStringProperty(difference);
     }
 
-    public String getDIFFERENCE() {
-        return DIFFERENCE.get();
-    }
-
-    public void setDIFFERENCE(String DIFFERENCE) {
-        this.DIFFERENCE.set(DIFFERENCE);
-    }
-
-    public String getSYSTEMNAME() {
-        return SYSTEMNAME.get();
-    }
-
-    public void setSYSTEMNAME(String SYSTEMNAME) {
-        this.SYSTEMNAME.set(SYSTEMNAME);
-    }
-
-    public void clearFleetList(ObservableList<FleetPrinter> tList) {
-        fleetPrinters.removeAll(tList);
-    }
-
     public ObservableList<FleetPrinter> getFleetPrinters() {
         return fleetPrinters;
-    }
-
-    public void setFleetPrinters(ObservableList<FleetPrinter> fleetPrinters) {
-        this.fleetPrinters.addAll(fleetPrinters);
     }
 
     public ObservableList<FleetPrinter> getFleetPrinterList(List<String[]> list) {

@@ -8,7 +8,7 @@ import java.time.format.DateTimeFormatter;
 /**
  * Created by jcarlett on 3/10/2017.
  */
-public class Converter extends StringConverter<LocalDate> {
+public class DateConverter extends StringConverter<LocalDate> {
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-M-d");
 
     @Override
