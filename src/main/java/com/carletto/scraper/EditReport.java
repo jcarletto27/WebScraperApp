@@ -4,6 +4,8 @@ import com.carletto.scraper.utils.DateList;
 import com.carletto.scraper.utils.HostName;
 import com.gargoylesoftware.htmlunit.*;
 import com.gargoylesoftware.htmlunit.html.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -13,6 +15,8 @@ import java.util.List;
  * Created by jcarlett on 3/3/2017.
  */
 public class EditReport {
+
+    private static final Logger logger = LoggerFactory.getLogger(EditReport.class);
 
     public HtmlPage page;
     public List<HtmlSelect> selectList = new ArrayList<>();
@@ -72,7 +76,7 @@ public class EditReport {
             page = webClient.getPage(url);
 
 
-            //System.out.println(page.getWebResponse().getContentAsString());
+            logger.info(page.getWebResponse().getContentAsString());
 
 
             //Gather your elements, and move what we need to new list
@@ -109,8 +113,7 @@ public class EditReport {
 
 
         } catch (IOException e) {
-            e.printStackTrace();
-
+            logger.error("Failed .... somehow", e);
         }
 
     }
@@ -136,7 +139,7 @@ public class EditReport {
             return submitInput.click();
 
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("Failed to submit report", e);
             return null;
         }
 
